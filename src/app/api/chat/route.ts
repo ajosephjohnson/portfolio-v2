@@ -13,7 +13,9 @@ export async function POST(req: Request) {
             role: 'user',
             content: prompt,
         }],
-        async onFinish({ text, toolCalls, toolResults, usage, finishReason }) {
+        async onFinish({
+            // text, toolCalls, toolResults, usage, finishReason
+        }) {
             // implement your own logic here, e.g. for storing messages
             // or recording token usage
         },
