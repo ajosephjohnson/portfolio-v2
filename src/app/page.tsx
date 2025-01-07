@@ -59,9 +59,27 @@ export default function Chat() {
     const adapter = useAsStreamAdapter(streamText, [ threadId ]);
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="z-10 w-full max-w-3xl items-center justify-between font-mono text-sm lg:flex">
-                <AiChat api={api} adapter={adapter} />
+        <main className="min-h-screen max-w-screen-lg m-auto flex flex-col items-center p-10 md:p-24">
+            <div className="text-center mb-10">
+                <h1 className="text-3xl font-bold">Alan Johnson</h1>
+                <h2 className="text-2xl">AMA (Ask Me Anything)</h2>
+            </div>
+            <p className="text-center mb-10">
+                Full-stack developer and technical strategist with expertise in building scalable web applications,
+                automating workflows, and optimizing performance, accessibility, and SEO to deliver data-driven business results.
+            </p>
+            <div className="w-full max-w-full text-center">
+                <AiChat
+                    api={api}
+                    adapter={adapter}
+                    personaOptions={{
+                        assistant: {
+                            name: '',
+                            avatar: '/images/alan_botson.jpeg',
+                            tagline: 'Ask me anything about my software development career!',
+                        },
+                    }}
+                />
             </div>
         </main>
     );
