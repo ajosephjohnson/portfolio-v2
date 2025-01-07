@@ -13,6 +13,10 @@ const config: Config = {
         foreground: "var(--foreground)",
         'github-blue': "#4078c0",
       },
+      spacing: {
+        '30': "7.5rem",
+        '33': "8.25rem",
+      }
     },
   },
   plugins: [],

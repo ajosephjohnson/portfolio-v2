@@ -59,13 +59,13 @@ export default function Chat() {
     const adapter = useAsStreamAdapter(streamText, [ threadId ]);
 
     return (
-        <main className="min-h-screen max-w-screen-lg m-auto flex flex-col items-center px-5 py-10 sm:p-10 md:p-24">
-            <div className="text-center mb-10">
+        <main className="md:min-h-screen max-w-screen-lg m-auto flex flex-col items-center px-5 py-6 sm:px-10 md:pl-30 md:px-20 md:py-10 xl:pl-20">
+            <div className="text-center mb-6 md:mb-10">
                 <h1 className="text-3xl font-bold">Alan Johnson</h1>
                 <h2 className="text-2xl">AMA (Ask Me Anything)</h2>
             </div>
-            <p className="text-center mb-10">
-                Full-stack developer and technical strategist with expertise in building scalable web applications,
+            <p className="text-center mb-6 md:mb-10">
+                Alan is a full-stack developer and technical strategist with expertise in building scalable web applications,
                 automating workflows, and optimizing performance, accessibility, and SEO to deliver data-driven business results.
             </p>
             <div className="w-full max-w-full text-center">
