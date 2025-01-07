@@ -1,5 +1,6 @@
 'use client';
 
+import { useCallback, useState } from 'react';
 import {
     AiChat,
     useAiChatApi,
@@ -7,7 +8,6 @@ import {
     StreamingAdapterObserver,
 } from '@nlux/react';
 import '@nlux/themes/nova.css';
-import { useCallback, useState } from 'react';
 
 
 
