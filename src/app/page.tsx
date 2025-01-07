@@ -7,14 +7,14 @@ import {
     StreamingAdapterObserver,
 } from '@nlux/react';
 import '@nlux/themes/nova.css';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 
 
 export default function Chat() {
     const [ threadId, setThreadId ] = useState<string | null>(null);
 
-    const streamText = async (prompt: string, observer: StreamingAdapterObserver) => {
+    const streamText = useCallback(async (prompt: string, observer: StreamingAdapterObserver) => {
         try {
             const response = await fetch('/api/assistant', {
                 method: 'POST',
@@ -53,7 +53,7 @@ export default function Chat() {
         } catch (error) {
             observer.error(error instanceof Error ? error : new Error('Unknown error occurred'));
         }
-    };
+    }, [ threadId ]);
 
     const api = useAiChatApi();
     const adapter = useAsStreamAdapter(streamText, [ threadId ]);
