@@ -38,7 +38,7 @@ export async function POST(req: Request) {
                     const hasAnnotations = delta.annotations && delta.annotations.length > 0;
 
                     // Send each text chunk to the client and omit citations
-                    if (!hasAnnotations && delta.value) {
+                    if (delta.value && !hasAnnotations && !delta.value.includes('†')) {
                         controller.enqueue(new TextEncoder().encode(delta.value));
                     }
                 });
