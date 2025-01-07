@@ -8,7 +8,7 @@ export default function Header() {
                 href="https://github.com/ajosephjohnson/portfolio-v2" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="h-16 w-16 sm:h-20 sm:w-20 p-3 sm:p-5 hover:opacity-50 transition-opacity duration-300 ease-in-out"
+                className="h-16 w-16 sm:h-20 sm:w-20 p-3 sm:p-5 hover:text-github-blue transition-color duration-300 ease-in-out"
             >
                 <FontAwesomeIcon icon={faGithub} />
             </a>
