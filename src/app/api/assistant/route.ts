@@ -35,8 +35,10 @@ export async function POST(req: Request) {
         const textStream = new ReadableStream({
             async start(controller) {
                 stream.on('textDelta', (delta) => {
-                    // Send each text chunk to the client
-                    if (delta.value) {
+                    const hasAnnotations = delta.annotations && delta.annotations.length > 0;
+
+                    // Send each text chunk to the client and omit citations
+                    if (!hasAnnotations && delta.value) {
                         controller.enqueue(new TextEncoder().encode(delta.value));
                     }
                 });
