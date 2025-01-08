@@ -10,18 +10,18 @@ export default function Header() {
 
             {/* DESKTOP STYLE LINES */}
             <div className="hidden md:block absolute top-0 left-[39px]">
-                <div className="dark:bg-white bg-black h-28 w-0.5" />
+                <div className="dark:bg-brand-white bg-brand-black h-28 w-0.5" />
             </div>
             <div className="hidden md:block absolute top-[520px] left-[39px]">
-                <div className="dark:bg-white bg-black h-72 w-0.5" />
+                <div className="dark:bg-brand-white bg-brand-black h-72 w-0.5" />
             </div>
 
             {/* MOBILE STYLE LINES */}
             <div className="block md:hidden absolute top-[51px] left-0 w-full">
-                <div className="dark:bg-white bg-black h-0.5 w-[calc((100%-296px)/2)]" />
+                <div className="dark:bg-brand-white bg-brand-black h-0.5 w-[calc((100%-296px)/2)]" />
             </div>
             <div className="block md:hidden absolute top-[51px] right-0 w-[calc((100%-296px)/2)]">
-                <div className="dark:bg-white bg-black h-0.5 w-full" />
+                <div className="dark:bg-brand-white bg-brand-black h-0.5 w-full" />
             </div>
 
             {/* CONTACT LINKS */}

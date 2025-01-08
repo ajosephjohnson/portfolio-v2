@@ -12,6 +12,8 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         'github-blue': "#4078c0",
+        'brand-white': "#ededed",
+        'brand-black': "#0a0a0a",
       },
       spacing: {
         '30': "7.5rem",
