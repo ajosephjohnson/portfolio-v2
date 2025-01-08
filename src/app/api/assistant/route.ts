@@ -41,7 +41,6 @@ export async function POST(req: Request) {
 
                         // Send each text chunk to the client and omit citations
                         if (!isCitation) {
-                            console.log(delta);
                             controller.enqueue(new TextEncoder().encode(delta.value));
                         }
                     }
