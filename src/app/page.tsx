@@ -103,6 +103,9 @@ export default function Chat() {
                             }
                         ]
                     }}
+                    displayOptions={{
+                        colorScheme: 'auto'
+                    }}
                 />
             </div>
         </main>
