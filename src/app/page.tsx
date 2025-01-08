@@ -72,10 +72,10 @@ export default function Chat() {
                 <h1 className="text-3xl font-bold">Alan Johnson</h1>
                 <h2 className="text-2xl">AMA (Ask Me Anything)</h2>
             </div>
-            <p className="text-center mb-6 md:mb-10">
+            <p className="text-center mb-6 md:mb-10">{`
                 Hi! 👋 I'm a full-stack software developer and technical strategist with expertise in building scalable web applications,
                 automating workflows, and optimizing performance, accessibility, and SEO to deliver data-driven business results.
-            </p>
+            `}</p>
             <div className="w-full text-center">
                 <AiChat
                     api={api}
