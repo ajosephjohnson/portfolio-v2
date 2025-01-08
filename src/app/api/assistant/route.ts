@@ -35,11 +35,15 @@ export async function POST(req: Request) {
         const textStream = new ReadableStream({
             async start(controller) {
                 stream.on('textDelta', (delta) => {
-                    const hasAnnotations = delta.annotations && delta.annotations.length > 0;
+                    if (delta.value) {
+                        const isCitation = (delta.annotations && delta.annotations.length > 0)
+                            || delta.value.includes('†') || delta.value.includes('vq');
 
-                    // Send each text chunk to the client and omit citations
-                    if (delta.value && !hasAnnotations && !delta.value.includes('†')) {
-                        controller.enqueue(new TextEncoder().encode(delta.value));
+                        // Send each text chunk to the client and omit citations
+                        if (!isCitation) {
+                            console.log(delta);
+                            controller.enqueue(new TextEncoder().encode(delta.value));
+                        }
                     }
                 });
                 stream.on('end', () => controller.close());
