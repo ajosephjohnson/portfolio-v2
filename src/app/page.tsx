@@ -44,9 +44,17 @@ export default function Chat() {
 
             while (true) {
                 const { value, done } = await reader.read();
-                if (done) break;
+                if (done) {
+                    const lastChunk = textDecoder.decode();
+                    if (lastChunk) {
+                        observer.next(lastChunk);
+                    }
+                    break;
+                }
                 const content = textDecoder.decode(value, { stream: true });
-                if (content) observer.next(content);
+                if (content) {
+                    observer.next(content);
+                }
             }
 
             observer.complete();
