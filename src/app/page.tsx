@@ -1,18 +1,18 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import {
     AiChat,
     useAiChatApi,
     useAsStreamAdapter,
     StreamingAdapterObserver,
 } from '@nlux/react';
-import '@nlux/themes/nova.css';
-
+import './styles/nlux-overrides.css';
 
 
 export default function Chat() {
     const [ threadId, setThreadId ] = useState<string | null>(null);
+    const [ colorScheme, setColorScheme ] = useState<'light' | 'dark' | 'auto'>('auto');
 
     const streamText = useCallback(async (prompt: string, observer: StreamingAdapterObserver) => {
         try {
@@ -63,6 +63,14 @@ export default function Chat() {
         }
     }, [ threadId ]);
 
+    useEffect(() => {
+        // Detect system presence and explicitly set dark mode option
+        if (typeof window !== 'undefined') {
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setColorScheme(isDarkMode ? 'dark' : 'light');
+        }
+    }, []);
+
     const api = useAiChatApi();
     const adapter = useAsStreamAdapter(streamText, [ threadId ]);
 
@@ -104,7 +112,7 @@ export default function Chat() {
                         ]
                     }}
                     displayOptions={{
-                        colorScheme: 'auto'
+                        colorScheme,
                     }}
                 />
             </div>
