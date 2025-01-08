@@ -73,10 +73,10 @@ export default function Chat() {
                 <h2 className="text-2xl">AMA (Ask Me Anything)</h2>
             </div>
             <p className="text-center mb-6 md:mb-10">
-                Alan is a full-stack developer and technical strategist with expertise in building scalable web applications,
+                Hi! 👋 I'm a full-stack software developer and technical strategist with expertise in building scalable web applications,
                 automating workflows, and optimizing performance, accessibility, and SEO to deliver data-driven business results.
             </p>
-            <div className="w-full max-w-full text-center">
+            <div className="w-full text-center">
                 <AiChat
                     api={api}
                     adapter={adapter}
@@ -84,8 +84,24 @@ export default function Chat() {
                         assistant: {
                             name: '',
                             avatar: '/images/alan_botson.jpeg',
-                            tagline: 'Ask me anything about my software development career!',
+                            tagline: 'This assistant knows a lot about me. Ask anything about me or my software development career below!',
                         },
+                    }}
+                    composerOptions={{
+                        autoFocus: true,
+                    }}
+                    conversationOptions={{
+                        conversationStarters: [
+                            {
+                                prompt: 'What kinds of teams have you worked with?'
+                            },
+                            {
+                                prompt: 'Where can I see your work?'
+                            },
+                            {
+                                prompt: 'How many years of experience do you have?'
+                            }
+                        ]
                     }}
                 />
             </div>
