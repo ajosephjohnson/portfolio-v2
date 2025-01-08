@@ -25,3 +25,14 @@ body {
     text-wrap: balance;
   }
 }
+
+.nlux-launchPad-container {
+  min-height: 22rem;
+}
+
+.nlux-comp-welcomeMessage {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  max-width: 30rem;
+  margin: auto;
+}
