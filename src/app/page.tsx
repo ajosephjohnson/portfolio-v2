@@ -92,7 +92,7 @@ export default function Chat() {
                         assistant: {
                             name: '',
                             avatar: '/images/alan_botson.jpeg',
-                            tagline: 'This assistant knows a lot about me. Ask me anything about my software development career below!',
+                            tagline: 'This AI assistant knows a lot about me. Ask me anything about my software development career below!',
                         },
                     }}
                     composerOptions={{
