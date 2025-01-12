@@ -19,7 +19,10 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
     title: "Alan Johnson | AMA",
-    description: "Hire me!",
+    description: `
+        Hi! 👋 I'm a full-stack software developer and technical strategist with expertise in building scalable web applications,
+        automating workflows, and optimizing performance, accessibility, and SEO to deliver data-driven business results.
+    `,
 };
 
 export default function RootLayout({
